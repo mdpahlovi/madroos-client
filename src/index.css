@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .my-container {
+        @apply container mx-auto px-6;
+    }
+    .section-gap {
+        @apply py-12 sm:py-14 lg:py-16;
+    }
+    .content-gap-x {
+        @apply flex gap-3;
+    }
+    .content-gap-y {
+        @apply flex flex-col gap-3;
+    }
+    .heading-text {
+        @apply text-4xl lg:text-5xl xxl:text-6xl font-bold;
+    }
+    .icon {
+        @apply flex justify-center items-center gap-1;
+    }
+    .vertical-line {
+        @apply flex items-center before:flex-1 before:border-t  after:flex-1 after:border-t;
+    }
+    .input-field {
+        @apply input input-primary w-full;
+    }
+}

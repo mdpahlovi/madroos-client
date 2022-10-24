@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: ["./src/**/*.{js,jsx,ts,tsx}"],
-
     theme: {
         screens: {
             xs: "448px",
@@ -9,13 +8,13 @@ module.exports = {
             md: "768px",
             lg: "1024px",
             xl: "1280px",
-            "2xl": "1600px",
+            xxl: "1600px",
         },
         fontFamily: {
             sans: ["Poppins", "sans-serif"],
         },
     },
-    plugins: [require("daisyui")],
+    plugins: [require("@tailwindcss/line-clamp"), require("daisyui")],
 
     // DaisyUI Customized
     daisyui: {
@@ -24,20 +23,18 @@ module.exports = {
                 light: {
                     ...require("daisyui/src/colors/themes")["[data-theme=light]"],
                     "base-100": "#ffffff",
-                    "base-content": "#131517",
-                    neutral: "#131517",
+                    "base-content": "#0c2538",
+                    neutral: "#0c2538",
                     "neutral-content": "#ffffff",
-                    primary: "#F7931E",
-                    secondary: "#143852",
+                    primary: "#1fb698",
                 },
                 dark: {
                     ...require("daisyui/src/colors/themes")["[data-theme=dark]"],
-                    "base-100": "#131517",
+                    "base-100": "#0c2538",
                     "base-content": "#ffffff",
                     neutral: "#ffffff",
-                    "neutral-content": "#131517",
-                    primary: "#F7931E",
-                    secondary: "#143852",
+                    "neutral-content": "#0c2538",
+                    primary: "#1fb698",
                 },
             },
             "light",
