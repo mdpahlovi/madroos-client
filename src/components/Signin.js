@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../context/UserContext";
 
 const Signin = () => {
-    const { signIn } = useContext(AuthContext);
+    const { signIn, signInByGoogle, signInByFacebook, signInByGithub } = useContext(AuthContext);
 
     const handelSubmit = (event) => {
         event.preventDefault();
@@ -19,6 +19,32 @@ const Signin = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
+            })
+            .catch((error) => console.error(error));
+    };
+
+    // Social Signin
+    const handelGoogleSignIn = () => {
+        signInByGoogle()
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch((error) => console.error(error));
+    };
+    const handelFacebookSignIn = () => {
+        signInByFacebook()
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch((error) => console.error(error));
+    };
+    const handelGithubSignIn = () => {
+        signInByGithub()
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
             })
             .catch((error) => console.error(error));
     };
@@ -43,15 +69,15 @@ const Signin = () => {
                 <p className="mx-2">Or Sign in with</p>
             </div>
             <div className="content-gap-x justify-between">
-                <button className="btn btn-outline btn-primary gap-1.5">
+                <button onClick={handelGoogleSignIn} className="btn btn-outline btn-primary gap-1.5">
                     <ImGoogle />
                     Google
                 </button>
-                <button className="btn btn-outline btn-primary gap-1.5">
+                <button onClick={handelFacebookSignIn} className="btn btn-outline btn-primary gap-1.5">
                     <BsFacebook />
                     Facebook
                 </button>
-                <button className="btn btn-outline btn-primary gap-1.5">
+                <button onClick={handelGithubSignIn} className="btn btn-outline btn-primary gap-1.5">
                     <ImGithub />
                     Github
                 </button>

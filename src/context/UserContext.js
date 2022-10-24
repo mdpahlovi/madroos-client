@@ -17,6 +17,9 @@ const auth = getAuth(app);
 
 const UserContext = ({ children }) => {
     const [user, setUser] = useState(null);
+    const googleProvider = new GoogleAuthProvider();
+    const facebookProvider = new FacebookAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
@@ -24,6 +27,19 @@ const UserContext = ({ children }) => {
 
     const signIn = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password);
+    };
+    const signInByGoogle = () => {
+        return signInWithPopup(auth, googleProvider);
+    };
+    const signInByFacebook = () => {
+        return signInWithPopup(auth, facebookProvider);
+    };
+    const signInByGithub = () => {
+        return signInWithPopup(auth, githubProvider);
+    };
+
+    const signout = () => {
+        return signOut(auth);
     };
 
     useEffect(() => {
@@ -34,7 +50,7 @@ const UserContext = ({ children }) => {
         return () => unSubscribe();
     }, []);
 
-    const authInfo = { user, createUser, signIn };
+    const authInfo = { user, createUser, signIn, signInByGoogle, signInByFacebook, signInByGithub, signout };
     return <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>;
 };
 

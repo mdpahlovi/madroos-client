@@ -36,16 +36,19 @@ const Navbar = () => {
                         <NavLink to="/" className={navLink} end>
                             Home
                         </NavLink>
-                        <NavLink to="courses" className={navLink}>
+                        <NavLink to="/courses" className={navLink}>
                             Courses
                         </NavLink>
-                        <NavLink to="blogs" className={navLink}>
+                        <NavLink to="/checkout" className={navLink}>
+                            Checkout
+                        </NavLink>
+                        <NavLink to="/blogs" className={navLink}>
                             Blogs
                         </NavLink>
-                        <NavLink to="faq" className={navLink}>
+                        <NavLink to="/faq" className={navLink}>
                             FAQ
                         </NavLink>
-                        <Link to="signin" className="btn btn-primary">
+                        <Link to="/signin" className="btn btn-primary">
                             Signin
                         </Link>
                         <div className="hidden lg:block ml-1">

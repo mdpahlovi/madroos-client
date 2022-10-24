@@ -49,6 +49,7 @@ const Signup = () => {
                 </div>
                 <Input type={"email"} name={"email"} text={"Email"} />
                 <Input type={"password"} name={"password"} text={"Password"} />
+                <Input type={"password"} name={"confirmPassword"} text={"Confirm Password"} />
                 <label className="label justify-start cursor-pointer">
                     <input type="checkbox" className="checkbox checkbox-primary" />
                     <p className="ml-2">
