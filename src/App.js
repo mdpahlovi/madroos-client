@@ -1,9 +1,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Main from "./layouts/Main";
 import Home from "./components/Home";
 import Courses from "./components/Courses";
+import Checkout from "./components/Checkout";
 import Blogs from "./components/Blogs";
 import FAQ from "./components/FAQ";
-import Main from "./layouts/Main";
+import Signin from "./components/Signin";
+import Signup from "./components/Signup";
 
 function App() {
     const router = createBrowserRouter([
@@ -20,12 +23,24 @@ function App() {
                     element: <Courses />,
                 },
                 {
+                    path: "/checkout",
+                    element: <Checkout />,
+                },
+                {
                     path: "/blogs",
                     element: <Blogs />,
                 },
                 {
                     path: "/faq",
                     element: <FAQ />,
+                },
+                {
+                    path: "/signin",
+                    element: <Signin />,
+                },
+                {
+                    path: "/signup",
+                    element: <Signup />,
                 },
             ],
         },

@@ -45,6 +45,9 @@ const Navbar = () => {
                         <NavLink to="faq" className={navLink}>
                             FAQ
                         </NavLink>
+                        <Link to="signin" className="btn btn-primary">
+                            Signin
+                        </Link>
                         <div className="hidden lg:block ml-1">
                             <ToggleTheme toggle={toggle} setToggle={setToggle} />
                         </div>
