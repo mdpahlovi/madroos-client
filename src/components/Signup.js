@@ -10,6 +10,7 @@ const Signup = () => {
     const { createUser } = useContext(AuthContext);
 
     const handelSubmit = (event) => {
+        // Get Form Data
         event.preventDefault();
         const form = event.target;
         const name = `${form.fastName.value} ${form.lastName.value}`;

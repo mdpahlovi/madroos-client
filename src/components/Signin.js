@@ -5,6 +5,8 @@ import { ImGoogle, ImGithub } from "react-icons/im";
 import { BsFacebook } from "react-icons/bs";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/UserContext";
+import { toast } from "react-toastify";
+import { getThemeValue } from "../Utilities/getThemeValue";
 
 const Signin = () => {
     const { signIn, signInByGoogle, signInByFacebook, signInByGithub } = useContext(AuthContext);
@@ -14,6 +16,7 @@ const Signin = () => {
     const from = loaction.state?.from?.pathname || "/";
 
     const handelSubmit = (event) => {
+        // Get Form Data
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
@@ -26,7 +29,21 @@ const Signin = () => {
                 form.reset();
                 navigate(from, { replace: true });
             })
-            .catch((error) => console.error(error));
+            .catch((error) => {
+                const errorMessage = error.message;
+                console.log(errorMessage);
+                if (errorMessage === "Firebase: Error (auth/wrong-password).") {
+                    toast.error("OPPS ! Your password didn't match", {
+                        theme: getThemeValue(),
+                    });
+                    form.reset();
+                } else if (errorMessage === "Firebase: Error (auth/user-not-found).") {
+                    toast.error("OPPS ! User doesn't found", {
+                        theme: getThemeValue(),
+                    });
+                    form.reset();
+                }
+            });
     };
 
     // Social Signin
