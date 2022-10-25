@@ -4,12 +4,12 @@ import { IoIosPeople, IoMdTime, IoMdStar } from "react-icons/io";
 const CourseCard = ({ course }) => {
     const { img, name, instructor, ratting, price, lesson, students, time } = course;
     return (
-        <div className="rounded-3xl shadow-lg">
+        <div className="rounded-3xl shadow-lg bg-base-content/10">
             <figure>
                 <img className="w-full rounded-t-3xl" src={img} alt="Shoes" />
             </figure>
             <div className="px-5 grid grid-rows-card-body">
-                <div class="border-b flex items-center justify-between">
+                <div class="border-b border-base-content/50 flex items-center justify-between">
                     <div className="flex items-center gap-2">
                         <img className="w-10 rounded-full" src={instructor.img} alt="" />
                         <p className="text-lg font-semibold">{instructor.name}</p>
@@ -24,7 +24,7 @@ const CourseCard = ({ course }) => {
                     <h2 className="text-xl font-semibold">{name}</h2>
                     <p>Price : {price}$</p>
                 </div>
-                <div class="border-t pt-3 pb-4 flex justify-between">
+                <div class="border-t border-base-content/50 pt-3 pb-4 flex justify-between">
                     <div>Lesson {lesson}</div>
                     <div className="flex items-center gap-1">
                         <IoIosPeople className="text-xl text-primary" /> {students}

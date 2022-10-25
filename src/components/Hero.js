@@ -25,10 +25,10 @@ const Hero = () => {
                     </div>
                 </div>
                 <div className="content-gap-x flex-wrap">
-                    <Link to={"/"} className="btn btn-primary">
+                    <Link to={"/"} className="btn btn-primary w-full xs:w-auto">
                         Get Started
                     </Link>
-                    <Link to={"/courses"} className="btn btn-outline btn-primary">
+                    <Link to={"/courses"} className="btn btn-outline btn-primary w-full xs:w-auto">
                         Our Courses
                     </Link>
                 </div>

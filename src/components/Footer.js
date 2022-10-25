@@ -5,7 +5,7 @@ import { BsFacebook } from "react-icons/bs";
 
 const Footer = () => {
     return (
-        <footer className="footer border-t border-base-300 gap-y-5 footer-center section-gap px-6 text-base text-base-content">
+        <footer className="footer bg-base-content/10 gap-y-5 footer-center section-gap px-6 text-base text-base-content">
             <div className="content-gap-x flex-wrap">
                 <Link className="link link-hover">About us</Link>
                 <Link className="link link-hover">Contact</Link>
@@ -26,7 +26,9 @@ const Footer = () => {
                 </div>
             </div>
             <div>
-                <p>Copyright © 2022 - All right reserved by ACME Industries Ltd</p>
+                <p>
+                    Copyright © 2022 - All right reserved by <span className="uppercase underline">Madroos</span> Ltd
+                </p>
             </div>
         </footer>
     );

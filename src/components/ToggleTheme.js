@@ -13,7 +13,7 @@ const ToggleTheme = ({ toggle, setToggle }) => {
         }
     };
     return (
-        <div className="border-l border-base-content py-[6px] pl-5 flex items-center">
+        <div className="border-l border-base-content/50 py-[6px] pl-5 flex items-center">
             <label className="swap swap-rotate">
                 <input onClick={toggleTheme} type="checkbox" />
                 <MdLightMode className="swap-off text-3xl"></MdLightMode>
