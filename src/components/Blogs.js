@@ -4,7 +4,7 @@ import Header from "./Reusable/Header";
 
 const Blogs = () => {
     return (
-        <section>
+        <>
             <Header title={"Our Letest Blogs"} route={"Blogs"} />
             <article className="my-container sm:max-w-2xl section-gap content-gap-y">
                 <Collapse
@@ -36,7 +36,7 @@ const Blogs = () => {
                     }
                 />
             </article>
-        </section>
+        </>
     );
 };
 

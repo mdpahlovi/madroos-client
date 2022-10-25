@@ -21,6 +21,7 @@ function App() {
                 },
                 {
                     path: "/courses",
+                    loader: () => fetch("https://madroos-server.vercel.app/courses"),
                     element: <Courses />,
                 },
                 {

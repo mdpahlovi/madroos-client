@@ -8,7 +8,7 @@ module.exports = {
             md: "768px",
             lg: "1024px",
             xl: "1280px",
-            xxl: "1600px",
+            "2xl": "1600px",
         },
         fontFamily: {
             sans: ["Poppins", "sans-serif"],
@@ -17,6 +17,9 @@ module.exports = {
             backgroundImage: {
                 header: "url('/src/images/header.jpg')",
                 hero: "url('/src/images/hero.jpg')",
+            },
+            gridTemplateRows: {
+                "card-body": "minmax(64px, auto) minmax(104px, auto) minmax(48px, 1fr)",
             },
         },
     },

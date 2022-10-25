@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import Input from "./Reusable/Input";
+import Header from "./Reusable/Header";
 import { ImGoogle, ImGithub } from "react-icons/im";
 import { BsFacebook } from "react-icons/bs";
 import { Link } from "react-router-dom";
@@ -50,45 +51,48 @@ const Signin = () => {
     };
 
     return (
-        <section className="form-container section-gap content-gap-y">
-            <form onSubmit={handelSubmit} className="content-gap-y">
-                <Input type={"email"} name={"email"} text={"Email"} />
-                <Input type={"password"} name={"password"} text={"Password"} />
-                <div className="flex justify-between items-center">
-                    <label className="label cursor-pointer">
-                        <span className="mr-2">Remember me</span>
-                        <input type="checkbox" className="checkbox checkbox-primary" />
-                    </label>
-                    <a className="link" href="/">
-                        Forgot password?
-                    </a>
+        <>
+            <Header title={"SignIn your account"} route={"Signin"} />
+            <section className="form-container section-gap content-gap-y">
+                <form onSubmit={handelSubmit} className="content-gap-y">
+                    <Input type={"email"} name={"email"} text={"Email"} />
+                    <Input type={"password"} name={"password"} text={"Password"} />
+                    <div className="content-gap-x flex-wrap justify-between items-center">
+                        <label className="label cursor-pointer">
+                            <span className="mr-2">Remember me</span>
+                            <input type="checkbox" className="checkbox checkbox-primary" />
+                        </label>
+                        <a className="link" href="/">
+                            Forgot password?
+                        </a>
+                    </div>
+                    <input type={"submit"} value="Sign In" className="btn btn-primary" />
+                </form>
+                <div className="line-x">
+                    <p className="mx-2">Or Sign in with</p>
                 </div>
-                <input type={"submit"} value="Sign In" className="btn btn-primary" />
-            </form>
-            <div className="line-x">
-                <p className="mx-2">Or Sign in with</p>
-            </div>
-            <div className="content-gap-x justify-between">
-                <button onClick={handelGoogleSignIn} className="btn btn-outline btn-primary gap-1.5">
-                    <ImGoogle />
-                    Google
-                </button>
-                <button onClick={handelFacebookSignIn} className="btn btn-outline btn-primary gap-1.5">
-                    <BsFacebook />
-                    Facebook
-                </button>
-                <button onClick={handelGithubSignIn} className="btn btn-outline btn-primary gap-1.5">
-                    <ImGithub />
-                    Github
-                </button>
-            </div>
-            <p className="text-center">
-                Don't have an account?
-                <Link to="/signup" className="ml-1.5 font-bold uppercase underline">
-                    Sign Up Now
-                </Link>
-            </p>
-        </section>
+                <div className="content-gap-y xs:flex-row justify-between">
+                    <button onClick={handelGoogleSignIn} className="btn btn-outline btn-primary gap-1.5">
+                        <ImGoogle />
+                        Google
+                    </button>
+                    <button onClick={handelFacebookSignIn} className="btn btn-outline btn-primary gap-1.5">
+                        <BsFacebook />
+                        Facebook
+                    </button>
+                    <button onClick={handelGithubSignIn} className="btn btn-outline btn-primary gap-1.5">
+                        <ImGithub />
+                        Github
+                    </button>
+                </div>
+                <p className="text-center">
+                    Don't have an account?
+                    <Link to="/signup" className="ml-1.5 font-bold uppercase underline">
+                        Sign Up Now
+                    </Link>
+                </p>
+            </section>
+        </>
     );
 };
 
