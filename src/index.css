@@ -10,7 +10,7 @@
         @apply max-w-md mx-auto px-6;
     }
     .section-gap {
-        @apply py-6 sm:py-10 lg:py-16;
+        @apply py-12 sm:py-14 lg:py-16;
     }
     .content-gap-x {
         @apply flex gap-5;
@@ -18,11 +18,14 @@
     .content-gap-y {
         @apply flex flex-col gap-5;
     }
-    .heading-title {
-        @apply max-w-lg mx-auto text-[40px] leading-10 lg:text-5xl text-center font-bold;
+    .my-hero {
+        @apply absolute top-0 left-0 -z-[2] w-full h-full place-items-center bg-cover bg-center;
     }
-    .heading-details {
-        @apply max-w-lg mx-auto text-center;
+    .myhero-overlay {
+        @apply absolute top-0 left-0 -z-[1] w-full h-full bg-black/60;
+    }
+    .myhero-content {
+        @apply h-full my-container content-gap-y justify-center items-center text-white;
     }
     .line-x {
         @apply flex items-center before:flex-1 before:border before:border-base-content  after:flex-1 after:border after:border-base-content;

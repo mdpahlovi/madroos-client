@@ -13,6 +13,12 @@ module.exports = {
         fontFamily: {
             sans: ["Poppins", "sans-serif"],
         },
+        extend: {
+            backgroundImage: {
+                header: "url('/src/images/header.jpg')",
+                hero: "url('/src/images/hero.jpg')",
+            },
+        },
     },
     plugins: [require("@tailwindcss/line-clamp"), require("daisyui")],
 

@@ -1,16 +1,12 @@
 import React from "react";
 import Collapse from "./Reusable/Collapse";
+import Header from "./Reusable/Header";
 
 const Blogs = () => {
     return (
-        <section className="my-container section-gap content-gap-y">
-            <h1 className="heading-title">
-                Our Letest <span className="text-primary">Blogs</span>
-            </h1>
-            <p className="heading-details">
-                Read those blog effectively. Hope you learn something new. If you want to contribute write something to help other please contact us.
-            </p>
-            <article className="max-w-2xl mx-auto content-gap-y">
+        <section>
+            <Header title={"Our Letest Blogs"} route={"Blogs"} />
+            <article className="my-container sm:max-w-2xl section-gap content-gap-y">
                 <Collapse
                     que={"What is cors ?"}
                     ans={
