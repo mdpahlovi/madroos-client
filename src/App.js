@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Main from "./layouts/Main";
 import Home from "./components/Home";
 import Courses from "./components/Courses";
+import CourseDetials from "./components/CourseDetials";
 import PrivateRoute from "./routes/PrivateRoute";
 import Checkout from "./components/Checkout";
 import Blogs from "./components/Blogs";
@@ -24,6 +25,11 @@ function App() {
                     path: "/courses",
                     loader: () => fetch("https://madroos-server.vercel.app/courses"),
                     element: <Courses />,
+                },
+                {
+                    path: "/course/:id",
+                    loader: ({ params }) => fetch(`https://madroos-server.vercel.app/course/${params.id}`),
+                    element: <CourseDetials />,
                 },
                 {
                     path: "/checkout",
