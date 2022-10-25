@@ -9,11 +9,20 @@
     .form-container {
         @apply max-w-md mx-auto px-6;
     }
+    .section-gap {
+        @apply py-6 sm:py-10 lg:py-16;
+    }
     .content-gap-x {
         @apply flex gap-5;
     }
     .content-gap-y {
         @apply flex flex-col gap-5;
+    }
+    .heading-title {
+        @apply max-w-lg mx-auto text-[40px] leading-10 lg:text-5xl text-center font-bold;
+    }
+    .heading-details {
+        @apply max-w-lg mx-auto text-center;
     }
     .line-x {
         @apply flex items-center before:flex-1 before:border before:border-base-content  after:flex-1 after:border after:border-base-content;
