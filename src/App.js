@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Main from "./layouts/Main";
 import Home from "./components/Home";
 import Courses from "./components/Courses";
+import PrivateRoute from "./routes/PrivateRoute";
 import Checkout from "./components/Checkout";
 import Blogs from "./components/Blogs";
 import FAQ from "./components/FAQ";
@@ -26,7 +27,11 @@ function App() {
                 },
                 {
                     path: "/checkout",
-                    element: <Checkout />,
+                    element: (
+                        <PrivateRoute>
+                            <Checkout />
+                        </PrivateRoute>
+                    ),
                 },
                 {
                     path: "/blogs",

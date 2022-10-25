@@ -3,11 +3,15 @@ import Input from "./Reusable/Input";
 import Header from "./Reusable/Header";
 import { ImGoogle, ImGithub } from "react-icons/im";
 import { BsFacebook } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/UserContext";
 
 const Signin = () => {
     const { signIn, signInByGoogle, signInByFacebook, signInByGithub } = useContext(AuthContext);
+
+    const navigate = useNavigate();
+    const loaction = useLocation();
+    const from = loaction.state?.from?.pathname || "/";
 
     const handelSubmit = (event) => {
         event.preventDefault();
@@ -20,6 +24,7 @@ const Signin = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
+                navigate(from, { replace: true });
             })
             .catch((error) => console.error(error));
     };
@@ -30,6 +35,7 @@ const Signin = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user);
+                navigate(from, { replace: true });
             })
             .catch((error) => console.error(error));
     };
@@ -38,6 +44,7 @@ const Signin = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user);
+                navigate(from, { replace: true });
             })
             .catch((error) => console.error(error));
     };
@@ -46,6 +53,7 @@ const Signin = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user);
+                navigate(from, { replace: true });
             })
             .catch((error) => console.error(error));
     };
