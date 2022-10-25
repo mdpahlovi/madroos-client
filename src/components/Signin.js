@@ -50,7 +50,7 @@ const Signin = () => {
     };
 
     return (
-        <section className="form-container content-gap-y h-screen justify-center">
+        <section className="form-container section-gap content-gap-y">
             <form onSubmit={handelSubmit} className="content-gap-y">
                 <Input type={"email"} name={"email"} text={"Email"} />
                 <Input type={"password"} name={"password"} text={"Password"} />

@@ -18,7 +18,7 @@ const Navbar = () => {
     } lg:opacity-100 lg:translate-y-0`;
 
     return (
-        <nav className="sticky top-0 z-10 border-b border-base-300">
+        <nav className="sticky bg-base-100 top-0 z-10 border-b border-base-300">
             <div className="my-container h-16 lg:h-20 flex justify-between items-center">
                 <Link className="z-[2]" to="/">
                     <img className="w-28 lg:w-32" src={toggle ? LightLogo : DarkLogo} alt="" />

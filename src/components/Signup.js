@@ -41,7 +41,7 @@ const Signup = () => {
     };
 
     return (
-        <section className="form-container content-gap-y h-screen justify-center">
+        <section className="form-container section-gap content-gap-y">
             <form onSubmit={handelSubmit} className="content-gap-y">
                 <div className="content-gap-x justify-between">
                     <Input type={"text"} name={"fastName"} text={"Fast Name"} />

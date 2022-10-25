@@ -42,3 +42,7 @@
 .input-field:focus ~ .input-label {
     @apply label-top;
 }
+
+* {
+    outline: 0px;
+}
