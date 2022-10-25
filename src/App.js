@@ -7,6 +7,7 @@ import Blogs from "./components/Blogs";
 import FAQ from "./components/FAQ";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
     const router = createBrowserRouter([
@@ -43,6 +44,10 @@ function App() {
                     element: <Signup />,
                 },
             ],
+        },
+        {
+            path: "*",
+            element: <ErrorPage />,
         },
     ]);
     return <RouterProvider router={router}></RouterProvider>;
