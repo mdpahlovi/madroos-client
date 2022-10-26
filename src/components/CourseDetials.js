@@ -4,18 +4,33 @@ import { IoMdStar } from "react-icons/io";
 import Header from "./Reusable/Header";
 import CourseMeterial from "./Reusable/CourseMeterial";
 import CouseAbout from "./Reusable/CouseAbout";
+import ReactToPdf from "react-to-pdf";
 
 const CourseDetials = () => {
     const course = useLoaderData();
     const { id, img, name, instructor, ratting, price, lesson, students, time, keyword, about } = course;
+
+    // PDF Genarate Ref
+    const ref = React.createRef();
+    const options = {
+        orientation: "landscape",
+        unit: "in",
+    };
+
     return (
         <>
             <Header title={name} route={"Course"}>
-                <div>
-                    <button className="btn btn-primary">Download PDF</button>
-                </div>
+                <ReactToPdf targetRef={ref} filename="Course Details.pdf" options={options} x={0.5} y={0.25} scale={0.8}>
+                    {({ toPdf }) => (
+                        <div>
+                            <button className="btn btn-primary" onClick={toPdf}>
+                                Download PDF
+                            </button>
+                        </div>
+                    )}
+                </ReactToPdf>
             </Header>
-            <section className="my-container section-gap grid grid-cols-1 lg:grid-cols-[8fr_4fr] gap-6 md:gap-8">
+            <section ref={ref} className="my-container section-gap grid grid-cols-1 lg:grid-cols-[8fr_4fr] gap-6 md:gap-8">
                 <div className="content-gap-y gap-8">
                     <div className="rounded-lg shadow bg-base-content/10 p-0 sm:p-6 md:p-8">
                         <img className="rounded-lg" src={img} alt="" />
