@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Main from "./layouts/Main";
 import Home from "./components/Home";
-import CoursesLayout from "./layouts/CoursesLayout";
 import Courses from "./components/Courses";
 import CourseDetials from "./components/CourseDetials";
 import PrivateRoute from "./routes/PrivateRoute";
@@ -25,22 +24,16 @@ function App() {
                 {
                     path: "/courses",
                     loader: () => fetch("https://madroos-server.vercel.app/courses"),
-                    element: <CoursesLayout />,
-                    children: [
-                        {
-                            path: "/courses",
-                            loader: () => fetch("https://madroos-server.vercel.app/courses"),
-                            element: <Courses />,
-                        },
-                        {
-                            path: "course/:id",
-                            loader: ({ params }) => fetch(`https://madroos-server.vercel.app/course/${params.id}`),
-                            element: <CourseDetials />,
-                        },
-                    ],
+                    element: <Courses />,
                 },
                 {
-                    path: "/checkout",
+                    path: "course/:id",
+                    loader: ({ params }) => fetch(`https://madroos-server.vercel.app/course/${params.id}`),
+                    element: <CourseDetials />,
+                },
+                {
+                    path: "/checkout/:id",
+                    loader: ({ params }) => fetch(`https://madroos-server.vercel.app/course/${params.id}`),
                     element: (
                         <PrivateRoute>
                             <Checkout />

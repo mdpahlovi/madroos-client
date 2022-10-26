@@ -14,8 +14,8 @@ const Input = ({ type, name, text }) => {
     };
     return (
         <div onBlur={handelLabel} className="relative">
-            <input type={type} name={name} className="input-field" required={type === "email" || type === "password" ? true : false} />
-            <label htmlFor={name} className="input-label">
+            <input type={type} name={name} className="input-field peer" required={type === "email" || type === "password" ? true : false} />
+            <label htmlFor={name} className="input-label peer-focus:label-top">
                 {text}
             </label>
         </div>

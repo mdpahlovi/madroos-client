@@ -44,7 +44,7 @@ const Signup = () => {
 
     return (
         <>
-            <Header title={"Create a new user"} route={"Signup"} />
+            <Header title={"Create a new user"} route={"Signup"}></Header>
             <section className="form-container section-gap content-gap-y">
                 <form onSubmit={handelSubmit} className="content-gap-y">
                     <div className="content-gap-y xs:flex-row justify-between">

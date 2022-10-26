@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Header = ({ title, route }) => {
+const Header = ({ title, route, children }) => {
     return (
         <div className="relative section-gap">
             <div className="my-hero bg-header"></div>
@@ -16,6 +16,7 @@ const Header = ({ title, route }) => {
                         <li>{route}</li>
                     </ul>
                 </div>
+                {children}
             </div>
         </div>
     );

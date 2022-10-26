@@ -5,7 +5,7 @@ import Header from "./Reusable/Header";
 const Blogs = () => {
     return (
         <>
-            <Header title={"Our Letest Blogs"} route={"Blogs"} />
+            <Header title={"Our Letest Blogs"} route={"Blogs"}></Header>
             <article className="my-container sm:max-w-2xl section-gap content-gap-y">
                 <Collapse
                     que={"What is cors ?"}

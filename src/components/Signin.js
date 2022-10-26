@@ -77,7 +77,7 @@ const Signin = () => {
 
     return (
         <>
-            <Header title={"SignIn your account"} route={"Signin"} />
+            <Header title={"SignIn your account"} route={"Signin"}></Header>
             <section className="form-container section-gap content-gap-y">
                 <form onSubmit={handelSubmit} className="content-gap-y">
                     <Input type={"email"} name={"email"} text={"Email"} />
