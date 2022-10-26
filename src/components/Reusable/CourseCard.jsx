@@ -22,7 +22,7 @@ const CourseCard = ({ course }) => {
                     </div>
                 </div>
                 <div className="py-3">
-                    <Link to={`/course/${id}`} className="text-xl font-semibold hover:text-primary">
+                    <Link to={`/courses/course/${id}`} className="text-xl font-semibold hover:text-primary">
                         {name}
                     </Link>
                     <p>Price : {price}$</p>
