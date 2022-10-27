@@ -24,8 +24,9 @@ const Signin = () => {
 
         signIn(email, password)
             .then((result) => {
-                const user = result.user;
-                console.log(user);
+                toast.success("User Signin Completed", {
+                    theme: getThemeValue(),
+                });
                 form.reset();
                 navigate(from, { replace: true });
             })
@@ -50,8 +51,9 @@ const Signin = () => {
     const handelGoogleSignIn = () => {
         signInByGoogle()
             .then((result) => {
-                const user = result.user;
-                console.log(user);
+                toast.success("Google Signin Done", {
+                    theme: getThemeValue(),
+                });
                 navigate(from, { replace: true });
             })
             .catch((error) => console.error(error));
@@ -59,8 +61,9 @@ const Signin = () => {
     const handelFacebookSignIn = () => {
         signInByFacebook()
             .then((result) => {
-                const user = result.user;
-                console.log(user);
+                toast.success("Facebook Signin Done", {
+                    theme: getThemeValue(),
+                });
                 navigate(from, { replace: true });
             })
             .catch((error) => console.error(error));
@@ -68,8 +71,9 @@ const Signin = () => {
     const handelGithubSignIn = () => {
         signInByGithub()
             .then((result) => {
-                const user = result.user;
-                console.log(user);
+                toast.success("Github Signin Done", {
+                    theme: getThemeValue(),
+                });
                 navigate(from, { replace: true });
             })
             .catch((error) => console.error(error));

@@ -28,7 +28,7 @@
         @apply h-full my-container content-gap-y justify-center items-center text-white;
     }
     .line-x {
-        @apply flex items-center before:flex-1 before:border before:border-base-content  after:flex-1 after:border after:border-base-content;
+        @apply flex items-center before:flex-1 before:border before:border-base-content/50  after:flex-1 after:border after:border-base-content/50;
     }
     /* Input Field */
     .input {

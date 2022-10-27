@@ -7,13 +7,14 @@ import { toast } from "react-toastify";
 import { getThemeValue } from "../Utilities/getThemeValue";
 
 const Signup = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUserProfile } = useContext(AuthContext);
 
     const handelSubmit = (event) => {
         // Get Form Data
         event.preventDefault();
         const form = event.target;
         const name = `${form.fastName.value} ${form.lastName.value}`;
+        const img = form.img.value;
         const email = form.email.value;
         const password = form.password.value;
         const confirmPassword = form.confirmPassword.value;
@@ -35,9 +36,14 @@ const Signup = () => {
         // Create New User
         createUser(email, password)
             .then((result) => {
-                const user = result.user;
-                user.displayName = name;
                 form.reset();
+                updateUserProfile(name, img)
+                    .then(() => {
+                        toast.success("Profile Updateed", {
+                            theme: getThemeValue(),
+                        });
+                    })
+                    .catch((error) => console.log(error.message));
             })
             .catch((error) => console.error(error));
     };
@@ -51,6 +57,7 @@ const Signup = () => {
                         <Input type={"text"} name={"fastName"} text={"Fast Name"} />
                         <Input type={"text"} name={"lastName"} text={"Last Name"} />
                     </div>
+                    <Input type={"text"} name={"img"} text={"Image url"}></Input>
                     <Input type={"email"} name={"email"} text={"Email"} />
                     <Input type={"password"} name={"password"} text={"Password"} />
                     <Input type={"password"} name={"confirmPassword"} text={"Confirm Password"} />
