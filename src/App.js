@@ -10,6 +10,7 @@ import FAQ from "./components/FAQ";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
 import ErrorPage from "./components/ErrorPage";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 
 function App() {
     const router = createBrowserRouter([
@@ -55,6 +56,10 @@ function App() {
                 {
                     path: "/signup",
                     element: <Signup />,
+                },
+                {
+                    path: "/privacypolicy",
+                    element: <PrivacyPolicy />,
                 },
             ],
         },

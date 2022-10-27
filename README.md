@@ -2,7 +2,7 @@
 
 ### Open [Madroos](https://madroos-e.web.app/) to view this project
 
-#### Technology Used : React, JavaScript, TailwindCSS, DaisyUI, React Router Dom, Firebase, React Icons, React Toast etc.
+#### Technology Used : React, JavaScript, TailwindCSS, DaisyUI, React Router Dom, Firebase, React Icons, React Toast, React to PDF etc.
 
 #### What can you get here?
 

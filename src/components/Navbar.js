@@ -21,7 +21,7 @@ const Navbar = () => {
         <nav className="sticky bg-base-100 top-0 z-10">
             <div className="my-container h-16 lg:h-20 flex justify-between items-center">
                 <Link className="z-[2]" to="/">
-                    <img className="w-28 lg:w-32" src={toggle ? DarkLogo : LightLogo} alt="" />
+                    <img className="w-28 lg:w-32" src={toggle ? LightLogo : DarkLogo} alt="" />
                 </Link>
                 <div className="content-gap-x z-[2]">
                     <label className="lg:hidden swap swap-rotate text-3xl cursor-pointer z-[2]">

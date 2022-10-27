@@ -9,8 +9,10 @@ const Footer = () => {
             <div className="content-gap-x flex-wrap">
                 <Link className="link link-hover">About us</Link>
                 <Link className="link link-hover">Contact</Link>
-                <Link className="link link-hover">Jobs</Link>
-                <Link className="link link-hover">Press kit</Link>
+                <Link to={"/privacypolicy"} className="link link-hover">
+                    Privacy Policy
+                </Link>
+                <Link className="link link-hover">Terms & Condition</Link>
             </div>
             <div>
                 <div className="content-gap-x text-3xl">
