@@ -1,6 +1,6 @@
 # Madroos (Online Course Site)
 
-### Open [Madroos](https://idea-institute.netlify.app/) to view this project
+### Open [Madroos](https://madroos-ed.web.app/) to view this project
 
 #### Technology Used : React, JavaScript, TailwindCSS, DaisyUI, React Router Dom, Firebase, React Icons, React Toast etc.
 
