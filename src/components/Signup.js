@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Input from "./Reusable/Input";
 import Header from "./Reusable/Header";
 import { AuthContext } from "../context/UserContext";
@@ -7,11 +7,7 @@ import { toast } from "react-toastify";
 import { getThemeValue } from "../Utilities/getThemeValue";
 
 const Signup = () => {
-    const { createUser, updateUserProfile } = useContext(AuthContext);
-
-    const navigate = useNavigate();
-    const loaction = useLocation();
-    const from = loaction.state?.from?.pathname || "/";
+    const { createUser } = useContext(AuthContext);
 
     const handelSubmit = (event) => {
         // Get Form Data
@@ -40,18 +36,13 @@ const Signup = () => {
         // Create New User
         createUser(email, password)
             .then((result) => {
+                const user = result.user;
+                user.displayName = name;
+                user.photoURL = img;
                 form.reset();
                 toast.success("Account Created", {
                     theme: getThemeValue(),
                 });
-                updateUserProfile(name, img)
-                    .then(() => {
-                        toast.success("Profile Updateed", {
-                            theme: getThemeValue(),
-                        });
-                        navigate(from, { replace: true });
-                    })
-                    .catch((error) => console.log(error.message));
             })
             .catch((error) => console.error(error));
     };
