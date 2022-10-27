@@ -7,7 +7,7 @@ const CourseCard = ({ course }) => {
     return (
         <div className="rounded-lg shadow bg-base-content/10">
             <figure>
-                <img className="w-full rounded-t-3xl" src={img} alt="Shoes" />
+                <img className="w-full rounded-t-lg" src={img} alt="Shoes" />
             </figure>
             <div className="px-5 grid grid-rows-card-body">
                 <div className="border-b border-base-content/50 flex items-center justify-between">

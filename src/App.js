@@ -11,6 +11,7 @@ import Signin from "./components/Signin";
 import Signup from "./components/Signup";
 import ErrorPage from "./components/ErrorPage";
 import PrivacyPolicy from "./components/PrivacyPolicy";
+import CheckoutError from "./components/CheckoutError";
 
 function App() {
     const router = createBrowserRouter([
@@ -40,6 +41,10 @@ function App() {
                             <Checkout />
                         </PrivateRoute>
                     ),
+                },
+                {
+                    path: "/checkout",
+                    element: <CheckoutError />,
                 },
                 {
                     path: "/blogs",

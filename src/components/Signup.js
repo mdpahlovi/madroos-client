@@ -37,6 +37,9 @@ const Signup = () => {
         createUser(email, password)
             .then((result) => {
                 form.reset();
+                toast.success("Account Created", {
+                    theme: getThemeValue(),
+                });
                 updateUserProfile(name, img)
                     .then(() => {
                         toast.success("Profile Updateed", {

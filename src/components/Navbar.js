@@ -58,7 +58,7 @@ const Navbar = () => {
                                 </label>
                                 <div
                                     tabIndex={0}
-                                    className="mt-5 dropdown-content menu gap-1 bg-base-100 text-base-content rounded-box w-max p-4 pt-3 border border-base-300"
+                                    className="mt-5 dropdown-content menu gap-1 bg-base-100 text-base-content rounded-box w-max p-4 pt-3 border border-base-content/25"
                                 >
                                     <h1 className="font-semibold">{user.displayName ? user.displayName : "No Name"}</h1>
                                     <button onClick={signout} className="btn btn-sm btn-primary">

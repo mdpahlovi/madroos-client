@@ -4,7 +4,7 @@ import { FaQuoteRight } from "react-icons/fa";
 const FeedBack = ({ img, name, work, feedback }) => {
     return (
         <section className="my-container md:max-w-3xl">
-            <div className="bg-base-content/10 py-10 md:py-12 px-6 sm:px-8">
+            <div className="bg-base-content/10 rounded-lg py-10 md:py-12 px-6 sm:px-8">
                 <FaQuoteRight className="text-5xl mx-auto mb-5 text-base-content/50" />
                 <blockquote>
                     <p className="text-2xl font-medium">{feedback}</p>
